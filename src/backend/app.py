@@ -97,27 +97,37 @@ def search():
     available_seats = get_available_seats(matched[0]["flight_number"])
     return render_template("index.html", flights=matched, available_seats=available_seats)
 
-@app.route("/book", methods=["POST"])
-def book():
+@app.route("/book/<flight_number>", methods=["GET", "POST"])
+def book_flight(flight_number):
     if "username" not in session:
         return redirect(url_for("index"))
-
-    flight_number = request.form["flight_number"]
-    seat = request.form["seat"]
-    meal = request.form["meal"]
-    username = session["username"]
-    booking_id = generate_booking_id()
-
-    booking = {
-        "booking_id": booking_id,
-        "username": username,
-        "flight_number": flight_number,
-        "seat": seat,
-        "meal": meal
-    }
-
-    save_booking(booking)
-    return f"<h2>Booking confirmed!</h2><p>Booking ID: <strong>{booking_id}</strong></p><p><a href='/'>Back to home</a></p>"
+    flights = load_flights()
+    flight = next((f for f in flights if f["flight_number"] == flight_number), None)
+    if not flight:
+        return "Flight not found", 404
+    available_seats = get_available_seats(flight_number)
+    if request.method == "POST":
+        seat = request.form["seat"]
+        meal = request.form["meal"]
+        username = session["username"]
+        booking_id = generate_booking_id()
+        booking = {
+            "booking_id": booking_id,
+            "username": username,
+            "flight_number": flight_number,
+            "seat": seat,
+            "meal": meal
+        }
+        save_booking(booking)
+        return render_template(
+            "booking_confirmed.html",
+            booking_id=booking_id,
+            username=username,
+            flight=flight,
+            seat=seat,
+            meal=meal
+        )
+    return render_template("book_flight.html", flight=flight, available_seats=available_seats)
 
 @app.route("/edit-booking", methods=["POST"])
 def edit_booking():
@@ -147,6 +157,38 @@ def edit_booking():
         return f"<h2>Booking updated!</h2><p>Booking ID: <strong>{booking_id}</strong></p><p><a href='/'>Back to home</a></p>"
     else:
         return "<h2>Booking ID not found.</h2><p><a href='/'>Back to home</a></p>"
+
+@app.route("/my-bookings")
+def my_bookings():
+    if "username" not in session:
+        return redirect(url_for("index"))
+    username = session["username"]
+    bookings = []
+    if os.path.exists(BOOKINGS_FILE):
+        with open(BOOKINGS_FILE, "r") as f:
+            all_bookings = json.load(f)
+        bookings = [b for b in all_bookings if b.get("username") == username]
+    return render_template("my_bookings.html", bookings=bookings)
+
+@app.route("/purchase", methods=["GET", "POST"])
+def purchase():
+    if request.method == "POST":
+        method = request.form.get("method")
+        if method:
+            return redirect(url_for("payment", method=method))
+    return render_template("purchase.html")
+
+@app.route("/payment", methods=["GET", "POST"])
+def payment():
+    method = request.args.get("method") or request.form.get("method")
+    if request.method == "POST":
+        # 这里可以处理支付信息
+        return redirect(url_for("payment_success"))
+    return render_template("payment.html", method=method)
+
+@app.route("/payment-success")
+def payment_success():
+    return render_template("payment_success.html")
 
 # -------------------- Main --------------------
 

@@ -82,22 +82,28 @@
     }
   </style>
 </head>
-<body>
+<body style="background: url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed; background-size: cover;">
 
 <header>
   <div class="logo">✈️ FlyDreamAir</div>
   <nav>
-    <a href="#login">Login</a>
+    {% if not session.username %}
+      <a href="#login">Login</a>
+    {% else %}
+      <a href="#">Logged</a>
+    {% endif %}
     <a href="#search">Search</a>
     <a href="#book">Book</a>
     <a href="#edit">Edit</a>
+    <a href="/my-bookings" style="background:#003366;color:#fff;padding:6px 18px;border-radius:6px;font-weight:bold;margin-left:18px;box-shadow:0 2px 8px rgba(0,51,102,0.18);">My Flights</a>
   </nav>
 </header>
 
 <div class="hero"></div>
 
+{% if not session.username %}
 <!-- 👤 Login -->
-<div class="section" id="login">
+<div class="section" id="login" style="background: rgba(255,255,255,0.92); box-shadow: 0 4px 16px rgba(0,0,0,0.12);">
   <h2>User Login</h2>
   <form action="/login" method="post">
     <input type="text" name="username" placeholder="Full Name" required>
@@ -105,10 +111,11 @@
     <button type="submit">Login</button>
   </form>
 </div>
+{% endif %}
 
 {% if session.username %}
 <!-- 🔍 Search Flights -->
-<div class="section" id="search">
+<div class="section" id="search" style="background: rgba(255,255,255,0.92); box-shadow: 0 4px 16px rgba(0,0,0,0.12);">
   <h2>Search Flights</h2>
   <form action="/search" method="post">
     <input type="text" name="origin" placeholder="Origin (e.g., Sydney)" required>
@@ -120,12 +127,13 @@
 
 <!-- ✈️ Show Search Results -->
 {% if flights %}
-<div class="section">
+<div class="section" style="background: rgba(255,255,255,0.92); box-shadow: 0 4px 16px rgba(0,0,0,0.12);">
   <h2>Available Flights</h2>
   <ul>
     {% for flight in flights %}
-    <li>
+    <li style="margin-bottom: 10px;">
       {{ flight.flight_number }} – {{ flight.origin }} to {{ flight.destination }} on {{ flight.date }} at {{ flight.time }}
+      <a href="/book/{{ flight.flight_number }}" style="margin-left:18px;background:#0077cc;color:#fff;padding:4px 14px;border-radius:5px;font-weight:bold;text-decoration:none;">Book</a>
     </li>
     {% endfor %}
   </ul>
@@ -134,54 +142,28 @@
 
 <!-- 🧾 Book Flight -->
 {% if flights %}
-<div class="section" id="book">
-  <h2>Book Your Flight</h2>
-  <form action="/book" method="post">
-    <label>Select a Flight:</label>
-    <select name="flight_number" required>
-      {% for flight in flights %}
-        <option value="{{ flight.flight_number }}">
-          {{ flight.flight_number }} – {{ flight.origin }} to {{ flight.destination }} on {{ flight.date }} at {{ flight.time }}
-        </option>
-      {% endfor %}
-    </select>
-
-    <label>Select Seat:</label>
-    <select name="seat" required>
-      {% for seat in available_seats %}
-        <option value="{{ seat }}">{{ seat }}</option>
-      {% endfor %}
-    </select>
-
-    <label>Meal Preference:</label>
-    <select name="meal">
-      <option>None</option>
-      <option>Vegetarian</option>
-      <option>Non-Veg</option>
-    </select>
-
-    <button type="submit">Confirm Booking</button>
-  </form>
-</div>
+<!-- Book Your Flight组件已移除 -->
 {% endif %}
 
-<!-- 🔄 Edit Booking -->
-<div class="section" id="edit">
+<!--  Edit Booking -->
+<div class="section" id="edit" style="background: rgba(255,255,255,0.92); box-shadow: 0 4px 16px rgba(0,0,0,0.12);">
   <h2>Edit Booking</h2>
   <form action="/edit-booking" method="post">
     <input type="text" name="booking_id" placeholder="Booking ID (e.g., BK20250601-XXXXXX)" required>
     <input type="text" name="new_seat" placeholder="New Seat (optional)">
     <select name="new_meal">
       <option>None</option>
-      <option>Vegetarian</option>
-      <option>Non-Veg</option>
+      <option>Caesar chicken salad with croissant (for free)</option>
+      <option>Hong Kong sausage fried rice (for free)</option>
+      <option>Thai curry stewed beef with potatoes (for free)</option>
+      <option>Burgundy red wine stewed beef (extra $35)</option>
     </select>
     <button type="submit">Update Booking</button>
   </form>
 </div>
 {% endif %}
 
-<footer>
+<footer style="background: rgba(0,43,73,0.95);">
   <p>&copy; 2025 FlyDreamAir Booking System | University of Wollongong</p>
 </footer>
 

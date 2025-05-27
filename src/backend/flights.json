@@ -33,5 +33,33 @@
     "destination": "Sydney",
     "date": "2025-06-05",
     "time": "5:15 PM"
+  },
+  {
+    "flight_number": "MU762",
+    "origin": "Sydney",
+    "destination": "Shanghai",
+    "date": "2025-06-07",
+    "time": "9:15 PM"
+  },
+  {
+    "flight_number": "MU788",
+    "origin": "Sydney",
+    "destination": "Xian",
+    "date": "2025-06-09",
+    "time": "12:15 PM"
+  },
+  {
+    "flight_number": "HK996",
+    "origin": "Melbourne",
+    "destination": "Newyork",
+    "date": "2025-06-10",
+    "time": "2:35 AM"
+  },
+  {
+    "flight_number": "FA8808",
+    "origin": "Paris",
+    "destination": "Sydney",
+    "date": "2025-06-12",
+    "time": "9:05 AM"
   }
 ]

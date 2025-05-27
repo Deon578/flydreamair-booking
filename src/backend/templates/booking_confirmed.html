@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Confirmed – FlyDreamAir</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #f0f8ff;
+    }
+    .section {
+      padding: 2rem;
+      background-color: white;
+      margin: 2rem auto;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .section h2 {
+      color: #004080;
+      margin-bottom: 1rem;
+    }
+    .info-list {
+      text-align: left;
+      margin: 1.5rem auto;
+      display: inline-block;
+    }
+    .info-list li {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.7rem 2rem;
+      background-color: #0077cc;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body style="background: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed; background-size: cover;">
+  <div class="section" style="background: rgba(255,255,255,0.92); box-shadow: 0 4px 16px rgba(0,0,0,0.12);">
+    <h2>Booking Confirmed!</h2>
+    <p>Thank you, <strong>{{ username }}</strong>. Your booking is successful.</p>
+    <ul class="info-list">
+      <li><strong>Booking ID:</strong> {{ booking_id }}</li>
+      {% if flight %}
+        <li><strong>Flight:</strong> {{ flight.flight_number }} – {{ flight.origin }} to {{ flight.destination }} on {{ flight.date }} at {{ flight.time }}</li>
+      {% else %}
+        <li><strong>Flight Number:</strong> {{ flight_number }}</li>
+      {% endif %}
+      <li><strong>Seat:</strong> {{ seat }}</li>
+      <li><strong>Meal Preference:</strong> {{ meal }}</li>
+    </ul>
+    <div style="margin-top:2rem;">
+      <a href="/" class="button" style="background:#0077cc;">Return</a>
+      <a href="/purchase" class="button" style="background:#ff9800;margin-left:18px;">Go purchase</a>
+    </div>
+  </div>
+</body>
+</html> 

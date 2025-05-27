@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Bookings – FlyDreamAir</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .section {
+      padding: 2rem;
+      background-color: rgba(255,255,255,0.92);
+      margin: 3rem auto;
+      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+    .section h2 {
+      color: #004080;
+      margin-bottom: 1.5rem;
+    }
+    .booking-list {
+      text-align: left;
+      margin: 0 auto;
+      display: inline-block;
+    }
+    .booking-list li {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .empty {
+      color: #d32f2f;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h2>My Booked Flights</h2>
+    {% if bookings and bookings|length > 0 %}
+      <ul class="booking-list">
+        {% for b in bookings %}
+        <li>
+          <strong>Booking ID:</strong> {{ b.booking_id }}<br>
+          <strong>Flight:</strong> {{ b.flight_number }}<br>
+          <strong>Seat:</strong> {{ b.seat }}<br>
+          <strong>Meal:</strong> {{ b.meal }}
+        </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <div class="empty">You haven't booking any flights!</div>
+    {% endif %}
+    <a href="/" style="display:inline-block;margin-top:2rem;color:#0077cc;font-weight:bold;">&larr; Back to Home</a>
+  </div>
+</body>
+</html> 
