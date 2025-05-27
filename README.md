@@ -1,3 +1,4 @@
+
 # ✈️ FlyDreamAir – Customer Management and Booking System
 
 A full-stack airline booking system built as part of **CSIT214 – IT Project Management** at the **University of Wollongong**.
@@ -17,17 +18,15 @@ FlyDreamAir Booking System enables users to:
 
 ## 🗂️ Repository Structure
 
+```
 flydreamair-booking/
-├── README.md # Main project overview
+├── README.md                 # Main project overview
 ├── src/
-│ ├── frontend/ # UI assets (HTML/CSS)
-│ │ └── README.md
-│ └── backend/ # Flask backend and data
-│ └── README.md
-
-yaml
-Copy
-Edit
+│   ├── frontend/             # UI assets (HTML/CSS)
+│   │   └── README.md
+│   └── backend/              # Flask backend and data
+│       └── README.md
+```
 
 ---
 
@@ -52,72 +51,37 @@ Edit
 ```bash
 cd src/backend
 python app.py
-Then visit: http://127.0.0.1:5000
+```
+Then visit: `http://127.0.0.1:5000`
 
-✅ Key Features
-🔐 User login
+---
 
-✈️ Search and view all flights (mock data)
+## ✅ Key Features
 
-🧾 Book flights (with seat/meal selection)
+- 🔐 User login
+- ✈️ Search and view all flights (mock data)
+- 🧾 Book flights (with seat/meal selection)
+- 🔄 Edit bookings via booking ID
+- 📄 JSON-based storage (no DB required)
 
-🔄 Edit bookings via booking ID
+---
 
-📄 JSON-based storage (no DB required)
+## 📂 JSON Data Files
 
-📂 JSON Data Files
-flights.json: Pre-defined flight listings
+- `flights.json`: Pre-defined flight listings
+- `bookings.json`: Stores all confirmed bookings
+- `users.json`: Stores login session info
 
-bookings.json: Stores all confirmed bookings
+---
 
-users.json: Stores login session info
+## 🧪 Testing Suggestions
 
-🧪 Testing Suggestions
-Try booking a flight with various city names and dates – flights will always appear
+- Try booking a flight with various city names and dates – flights will always appear
+- Booking ID is auto-generated and displayed after confirmation
+- You can update your seat or meal using the Edit Booking form
 
-Booking ID is auto-generated and displayed after confirmation
+---
 
-You can update your seat or meal using the Edit Booking form
+## 📄 License
 
-📄 License
 Academic Use Only – Project for CSIT214, University of Wollongong
-
-yaml
-Copy
-Edit
-
----
-
-### 🎨 `frontend/README.md`
-
-```markdown
-# 🖥️ FlyDreamAir Frontend
-
-This directory contains the HTML and CSS files that form the UI of the FlyDreamAir booking system.
-
----
-
-## 📁 Files
-
-| File          | Description                                 |
-|---------------|---------------------------------------------|
-| `index.html`  | Main page using Jinja2 templates (Flask)    |
-| `styles.css`  | Layout and styling for the full web UI      |
-
----
-
-## 🧩 Pages & Sections
-
-- Login form
-- Flight search form
-- Booking dropdowns
-- Edit booking section
-- All wrapped in a clean, modern layout using Roboto font and gradients
-
----
-
-## 💡 Notes
-
-- The HTML dynamically renders data from Flask using Jinja2.
-- `index.html` must reside in `/templates` folder
-- `styles.css` is served from `/static/styles.css`
