@@ -3,6 +3,7 @@
 
 A comprehensive and user-centric web application for **flight booking, seat management, and customer interaction**, developed as part of the **CSIT214 – IT Project Management** course at the **University of Wollongong**.
 
+[Our website can be accessed here](https://deonpsunny1.wixsite.com/flydreamair-booking).
 ---
 
 ## 🌟 Project Highlights
@@ -24,13 +25,12 @@ FlyDreamAir Booking System aims to **modernize airline booking services** by del
 
 ## 👥 Team Members
 
-| Name                | Student ID | Role               | Contribution             |
-|---------------------|------------|--------------------|--------------------------|
-| Deon Pathrose Sunny | 8150667    | Project Manager    | Led development, backend, coordination |
-| Ashlin Lal          | [Insert ID] | Analyst / Developer | Built UI, search & booking features |
-| [Member 3 Name]     | [Insert ID] | Designer           | [Contribution]           |
-| [Member 4 Name]     | [Insert ID] | Tester             | [Contribution]           |
-| [Member 5 Name]     | [Insert ID] | Documentation      | [Contribution]           |
+| Name                | Student ID | Role               | Contribution                          |
+|---------------------|------------|--------------------|---------------------------------------|
+| Deon Pathrose Sunny | 8150667    |   Programmer       | Website, front/back end, coordination |
+| Ashlin Lal          |  |  Prersentation    | Built UI, search & booking features |
+| Yizhe LU            |  |   Documentation   | [Contribution]           |
+| Zeyu Xie            |  | Interface Design  | [Contribution]           |
 
 ---
 
