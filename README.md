@@ -22,7 +22,7 @@ The goal is to increase operational efficiency, improve customer satisfaction, a
 |---------------------|------------|---------------------|--------------------------|
 | Deon Pathrose Sunny | 8150667    | Project Manager     | Contributed              |
 | Ashlin Lal          | [Insert ID] | Analyst / Developer | Contributed              |
-| [Member 3 Name]     | [Insert ID] | Designer            | Almost No Contribution   |
+| Yizhe LU            | 8232799     | Designer            | Contributed             |
 | [Member 4 Name]     | [Insert ID] | Tester              | Contributed              |
 | [Member 5 Name]     | [Insert ID] | Scheduler / Support | Contributed              |
 
