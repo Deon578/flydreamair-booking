@@ -1,3 +1,4 @@
+
 # ✈️ FlyDreamAir – Customer Management and Booking System
 
 A comprehensive and user-centric web application for **flight booking, seat management, and customer interaction**, developed as part of the **CSIT214 – IT Project Management** course at the **University of Wollongong**.
@@ -45,20 +46,23 @@ FlyDreamAir Booking System aims to **modernize airline booking services** by del
 
 ## 📂 Repository Structure
 
+```
 flydreamair-booking-system/
-├── backend/ # Python Flask app & data
-│ ├── app.py
-│ ├── flights.json
-│ ├── bookings.json
-│ ├── users.json
-│ └── README.md
-├── frontend/ # Frontend layout and static content
-│ ├── templates/
-│ │ └── index.html
-│ ├── static/
-│ │ └── styles.css
-│ └── README.md
-├── README.md # Main project overview (this file)
+├── backend/                  # Python Flask app & data
+│   ├── app.py
+│   ├── flights.json
+│   ├── bookings.json
+│   ├── users.json
+│   └── README.md
+├── frontend/                 # Frontend layout and static content
+│   ├── templates/
+│   │   └── index.html
+│   ├── static/
+│   │   └── styles.css
+│   └── README.md
+├── README.md                 # Main project overview (this file)
+```
+
 ---
 
 ## 🚀 How to Run the Project
@@ -68,32 +72,35 @@ flydreamair-booking-system/
    ```bash
    git clone https://github.com/your-group-id/flydreamair-booking-system.git
    cd flydreamair-booking-system/backend
-Run the app:
-
-bash
-Copy
-Edit
-python app.py
-Open your browser and go to:
-http://127.0.0.1:5000
+   ```
+3. Run the app:
+   ```bash
+   python app.py
+   ```
+4. Open your browser and go to:  
+   `http://127.0.0.1:5000`
 
 ✅ No need for external database. Everything runs with local JSON storage.
 
-📈 Why This Project Stands Out
-This system was carefully designed with realistic project management practices and a clear user-focused interface, reflecting:
+---
 
-Solid project planning (scope, WBS, risk management, etc.)
+## 📈 Why This Project Stands Out
 
-Agile-inspired development (tested weekly, incrementally improved)
+This system was carefully designed with **realistic project management** practices and a **clear user-focused interface**, reflecting:
 
-Version control via GitHub
+- Solid project planning (scope, WBS, risk management, etc.)
+- Agile-inspired development (tested weekly, incrementally improved)
+- Version control via GitHub
+- Dynamic, real-time user input handling
+- Clean, simple code architecture
 
-Dynamic, real-time user input handling
+---
 
-Clean, simple code architecture
+## 🏁 Final Notes
 
-🏁 Final Notes
-This submission fulfills all required features for the CSIT214 project. It showcases how thoughtful design + agile coding + teamwork results in a powerful system that's easy to use and maintain.
+This submission fulfills all required features for the CSIT214 project. It showcases how **thoughtful design + agile coding + teamwork** results in a powerful system that's easy to use and maintain.
 
-Built with passion, precision, and Python 🐍
-Team FlyDreamAir ✈️ – 2025
+---
+
+> Built with passion, precision, and Python 🐍  
+> Team FlyDreamAir ✈️ – 2025
