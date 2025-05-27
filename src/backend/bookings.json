@@ -1,0 +1,16 @@
+[
+  {
+    "booking_id": "BK20250527-52CFEC",
+    "name": "deon_p_sunny",
+    "flight_number": "FD101",
+    "seat": "A1",
+    "meal": "None"
+  },
+  {
+    "booking_id": "BK20250527-290250",
+    "username": "deon_p_sunny",
+    "flight_number": "FD303",
+    "seat": "A3",
+    "meal": "Vegetarian"
+  }
+]

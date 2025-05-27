@@ -1,0 +1,37 @@
+[
+  {
+    "flight_number": "FD101",
+    "origin": "Sydney",
+    "destination": "Melbourne",
+    "date": "2025-06-01",
+    "time": "10:00 AM"
+  },
+  {
+    "flight_number": "FD202",
+    "origin": "Sydney",
+    "destination": "Brisbane",
+    "date": "2025-06-02",
+    "time": "2:30 PM"
+  },
+  {
+    "flight_number": "FD303",
+    "origin": "Melbourne",
+    "destination": "Perth",
+    "date": "2025-06-03",
+    "time": "6:45 AM"
+  },
+  {
+    "flight_number": "FD404",
+    "origin": "Adelaide",
+    "destination": "Cairns",
+    "date": "2025-06-04",
+    "time": "8:00 AM"
+  },
+  {
+    "flight_number": "FD505",
+    "origin": "Brisbane",
+    "destination": "Sydney",
+    "date": "2025-06-05",
+    "time": "5:15 PM"
+  }
+]
