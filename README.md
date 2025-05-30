@@ -29,7 +29,7 @@ FlyDreamAir Booking System aims to **modernize airline booking services** by del
 |---------------------|------------|--------------------|---------------------------------------|
 | Deon Pathrose Sunny | 8150667    |   Programmer       | Website, front/back end, coordination |
 | Ashlin Lal          |  |  Prersentation    | Built UI, search & booking features |
-| Yizhe LU            |  |   Documentation   | [Contribution]           |
+| Yizhe LU            | 8232799 |   Documentation   | complete report,risk management,all Gantt charts and other forms|
 | Zeyu Xie            | 6911304 | Interface Design  | Add payment and booking management components/ page optimization|
 
 ---
